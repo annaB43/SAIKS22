@@ -1,0 +1,1292 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#"
+     xml:base="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp">
+        <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#toDo -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#toDo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#resource -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#resource"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#affectedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#affectedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#affects"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#AnatomicalEntity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Problem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#affects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#affects">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Problem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#AnatomicalEntity"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#affects"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#isPartOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#amountInFood -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#amountInFood">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containsAmount"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#SubstanceAmount"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#amountOfSubstance -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#amountOfSubstance">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containedByAmount"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#SubstanceAmount"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#belongsTo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containsFood"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FoodGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexIntoleranceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexIntoleranceOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexIntolerance"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FoodGroup"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexRequirementOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexRequirementOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexRequirement"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FoodGroup"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containedByAmount -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containedByAmount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#SubstanceAmount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containedIn">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#contains"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#contains">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containsAmount"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#amountOfSubstance"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containsAmount -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containsAmount">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#SubstanceAmount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containsFood -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containsFood">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FoodGroup"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#dietEmphasizes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#dietEmphasizes">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#emphasizedByDiet"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Diet"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#dietForbids"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#dietEmphasizes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containedIn"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#dietForbids -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#dietForbids">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#forbiddenByDiet"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Diet"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#dietForbids"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containedIn"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#displaysSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#displaysSymptom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#emphasizedByDiet -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#emphasizedByDiet">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Diet"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#forbiddenByDiet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#forbiddenByDiet -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#forbiddenByDiet">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Diet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasAllergy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasAllergy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasRequirement"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasAllergy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containedIn"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasCause -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasCause">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Condition"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Symptom"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Cause"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasComplexIntolerance -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasComplexIntolerance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexIntolerance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasComplexRequirement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasComplexRequirement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexRequirement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasCondition">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ClientCondition"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Condition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasGoal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasGoal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasIntolerance -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasIntolerance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasRequirement"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasComplexIntolerance"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexIntoleranceOf"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasIntolerance"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containedIn"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasPart">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#AnatomicalEntity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#AnatomicalEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasRequirement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasRequirement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FoodGroup"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasComplexRequirement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexRequirementOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasSymptom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Cause"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Condition"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasTreatmentInterval -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasTreatmentInterval">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentPlan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentInterval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasTreatmentPlan -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasTreatmentPlan">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#treatmentOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentPlan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#isPartOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#AnatomicalEntity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#AnatomicalEntity"/>
+        <toDo>Any way to model that only certain domain-range pairs are valid for the same relation?
+it seems when declaring two inverse relations with varying domains and ranges, one of them will be overwritten?</toDo>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#livesAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#livesAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#mandatesExercise -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#mandatesExercise">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ExercisePlan"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Exercise"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ExerciseSet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#mandatesFood -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#mandatesFood">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#NutritionalRecommendation"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FoodGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#monitors -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#monitors">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Guide"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentPlan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#muscle -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#muscle">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#muscleOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Bodypart"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Muscle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#muscleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#muscleOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Muscle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Bodypart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ofCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ofCondition">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Cause"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Symptom"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Condition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#partOfExerciseSet -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#partOfExerciseSet">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#setContainsExercise"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Exercise"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ExerciseSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#prescribesMedicine -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#prescribesMedicine">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#MedicationPlan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#proposes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#proposes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Guide"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentPlan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#requirementMetBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#requirementMetBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasRequirement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containedIn"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasRequirement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#containsFood"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#setContainsExercise -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#setContainsExercise">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ExerciseSet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Exercise"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#supervises -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#supervises">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Guide"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#monitors"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#treatmentOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#trains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#trains">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Exercise"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ExerciseSet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Muscle"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#setContainsExercise"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#trains"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#treatmentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#treatmentOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentPlan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#treats -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#treats">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Problem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#worksAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#worksAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Guide"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#worsens -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#worsens">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Problem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#calorieConversionRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#calorieConversionRate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#NutritionalComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calories per g of nutrient</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasAddress">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasCalories -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasCalories">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>per 100g</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasConditionOnClient -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasConditionOnClient">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ClientCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasDosage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasDosage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>in mg</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasHeight">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>in cm</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasName">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#BodySystem"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Bodypart"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Diet"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Exercise"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FoodGroup"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Location"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Mind"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Muscle"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Person"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Problem"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasRequirementOrIntoleranceDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasRequirementOrIntoleranceDescription">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexIntolerance"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexRequirement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#hasWeight">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>in kg</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#isTreatable -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#isTreatable">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Cause"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>can the cause be treated? e.g. underdeveloped leg muscles as cause of fitness goal can be trained. aging as cause of arthrosis cannot be cured.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#nameOfTarget -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#nameOfTarget">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Goal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#quantity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#quantity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#SubstanceAmount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#targetBinary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#targetBinary">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Goal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>if target is yes/no state</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#targetValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#targetValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Goal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>if quantifiable</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#type -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#NutritionalComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#AnatomicalEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#AnatomicalEntity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Body -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Body">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#AnatomicalEntity"/>
+        <rdfs:comment>not sure if this is necessary</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#BodySystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#BodySystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#AnatomicalEntity"/>
+        <rdfs:comment>e.g. cardiovascular system, neural system</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Bodypart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Bodypart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#AnatomicalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Cause -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Cause">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Problem"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Symptom"/>
+        <rdfs:comment>e.g. vitamin d deficiency</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ClientCondition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ClientCondition">
+        <rdfs:comment>Links instances of body parts, systems, psychology to the client and supplies a status datatype</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Compound -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Compound">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+        <rdfs:comment>Chemical compounds such as usually found in medicine</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Condition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Condition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Problem"/>
+        <rdfs:comment>the name of the disease, e.g. arthrosis</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Diet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Diet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Doctor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Doctor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Guide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Exercise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Exercise">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ExerciseInterval -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ExerciseInterval">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentInterval"/>
+        <rdfs:comment>To link a client to a range of ExerciseSets by way of setting timeframes and relaying other relevant information</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ExercisePlan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ExercisePlan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentPlan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ExerciseSet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#ExerciseSet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Treatment"/>
+        <toDo>should always be a collection as instances reflect specific combinations of exercises, usually finetuned for clients - how to implement?</toDo>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FitnessCoach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FitnessCoach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Guide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Food">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FoodGroup -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FoodGroup">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Treatment"/>
+        <rdfs:comment>e.g. low-calorie, low-fat, low-carb etc</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FoodInterval -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#FoodInterval">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentInterval"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Goal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Goal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Problem"/>
+        <rdfs:comment>not strictly a condition (disease) but still a wish for change. eg better focus, weight loss, higher stamina</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Guide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Guide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Gym -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Gym">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Location"/>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#MedicationInterval -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#MedicationInterval">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentInterval"/>
+        <rdfs:comment>To link a client to their medication by way of specifying intake conditions</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#MedicationPlan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#MedicationPlan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentPlan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Medicine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Mind -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Mind"/>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Muscle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Muscle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#AnatomicalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#NutritionalComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#NutritionalComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance"/>
+        <rdfs:comment>Nutritional micro and macro elements such as vitamins, proteins, etc</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#NutritionalRecommendation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#NutritionalRecommendation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentPlan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Nutritionist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Nutritionist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Guide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Office -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Office">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Problem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Problem"/>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Substance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#SubstanceAmount -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#SubstanceAmount">
+        <rdfs:comment>Helper class for n-ary relationship between a food/medicine and the substance it contains - specificies the amount by which it contains the substance</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Symptom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Symptom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Problem"/>
+        <rdfs:comment>how the problem manifests itself, i.e. headache, sleep deprivation. Can the symptom itself again be a cause, e.g. in the case of chain reactions?</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Treatment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Treatment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentInterval -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentInterval"/>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentPlan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#TreatmentPlan">
+        <rdfs:comment>The solution proposal devised by our application. Might just be a loose collection of possible treatments.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexIntolerance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexIntolerance">
+        <rdfs:comment>if any additional information (past binary YES/NO relation) is needed to record specirfics on a client&apos;s allergies, dietary requirements, substance incompatabilities, exercise incompatabilities, or the like.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#complexRequirement">
+        <rdfs:comment>if any additional information (past binary YES/NO relation) is needed to record specirfics on a client&apos;s allergies, dietary requirements, substance incompatabilities, exercise incompatabilities, or the like.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#arm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#arm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Bodypart"/>
+        <isPartOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#testclient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#biceps -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#biceps">
+        <rdf:type rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Muscle"/>
+        <isPartOf rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#arm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#testclient -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#testclient">
+        <rdf:type rdf:resource="http://www.semanticweb.org/entenzahn/ontologies/2022/3/medilifeapp#Client"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
